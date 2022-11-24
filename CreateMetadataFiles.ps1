@@ -1,11 +1,11 @@
-#This will create the number of individual metadata files defined as variable tot
-#written by Sue@Rombakis 11/23/2022
-$total=500
-$a=1
+#This will create the number of individual metadata files defined as variable tot with defined starting file number
+$total=6
+$StartNumber=1
+$a=($total+$StartNumber)-1
 DO
 {
-new-item C:\Project\Metadata\$a.txt
-add-content -Path C:\Project\Metadata\$a.txt -Value ('
+new-item C:\Project\Metadata\$StartNumber.txt
+add-content -Path C:\Project\Metadata\$StartNumber.txt -Value ('
 {
     "attributes": [
       {
@@ -18,7 +18,7 @@ add-content -Path C:\Project\Metadata\$a.txt -Value ('
       },
       {
         "trait_type": "Breed",
-        "value": "Red Spotted"
+        "value": "Bombay"
       },    
       {
         "trait_type": "Personality",
@@ -44,7 +44,7 @@ add-content -Path C:\Project\Metadata\$a.txt -Value ('
     ],
     "description": "Genesis collection of interstellar cat heros exploring the cosmos and beyond",
     
-    "name": "Cats In Outer Space #'+($a))
-$a
-$a++
-} While ($a -le $total)
+    "name": "Cats In Outer Space #'+($StartNumber)+'"')
+$StartNumber
+$StartNumber++
+} While ($StartNumber -le $a)
