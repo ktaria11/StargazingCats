@@ -44,7 +44,7 @@ add-content -Path C:\Project\Metadata\$StartNumber.txt -Value ('
     ],
     "description": "Genesis collection of interstellar cat heros exploring the cosmos and beyond",
     
-    "name": "Cats In Outer Space #'+($StartNumber)+'"')
+    "name": "Cats In Outer Space #'+($StartNumber)+'"}')
 $StartNumber
 $StartNumber++
 } While ($StartNumber -le $a)
